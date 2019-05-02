@@ -19876,16 +19876,32 @@ var Laya=window.Laya=(function(window,document){
 			atlas={};
 			atlas["width"]=ProjectSetting.textureWidth;
 			atlas["height"]=ProjectSetting.textureHeight;
-			atlas["powerOfTwo"]=ProjectSetting.power2=="true";
+			atlas["size"]=parseInt(ProjectSetting.textureWidth+"");
+			atlas["quality"]=-1;
+			atlas["pixelFormat"]=ProjectSetting.picType==0?"ARGB32":"Indexed8";
+			atlas["POT"]=ProjectSetting.power2=="true";
 			console.log("picType:",ProjectSetting.picType);
-			atlas["textureFormat"]=ProjectSetting.picType==0?"png32":"png8";
+			atlas["textureFormat"]="PNG";
 			packObj["atlas"]=atlas;
+			var dataParam;
+			dataParam={};
+			dataParam["format"]=ProjectSetting.atlasType==0?"json":"atlas";
+			dataParam["compact"]=ProjectSetting.dataCompact=="true";
+			packObj["data"]=dataParam;
+
 			var spriteConfig;
 			spriteConfig={};
 			spriteConfig["width"]=ProjectSetting.picWidth;
 			spriteConfig["height"]=ProjectSetting.picHeight;
+			spriteConfig["size"]=parseInt(ProjectSetting.picWidth+"");
+			spriteConfig["rotation"]=false;
+			spriteConfig["extrude"]=1;
+			spriteConfig["padding"]=1;
 			spriteConfig["cropAlpha"]=ProjectSetting.trimempty=="true";
 			packObj["sprite"]=spriteConfig;
+
+			console.log("packObj", packObj);
+
 			FileManager.createJSONFile(packFilePath,packObj);
 			var option;
 			option={encoding:"binary",maxBuffer:1024*1024*20};;
@@ -19898,7 +19914,15 @@ var Laya=window.Laya=(function(window,document){
 			console.log("Waiting for pics packing");
 			FileManager.createDirectory(FileManager.getWorkPath(ProjectSetting.resExportPath));
 			CMDShell.execute(cmd,function(err,stdOut,stdErr){
-				console.log("err",err);
+				if (err){
+					console.log("Error Occured: "+err);
+				}
+				else{
+					console.log(stdErr);
+				}
+				if (SystemSetting.isCMDVer){
+					console.log(stdOut);
+				}
 				ExportManager.packingEndHandler(err,stdOut,stdErr);
 			},option);
 		}
