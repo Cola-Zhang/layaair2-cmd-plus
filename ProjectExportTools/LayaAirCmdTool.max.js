@@ -19850,7 +19850,7 @@ var Laya=window.Laya=(function(window,document){
 			if(ExportManager.clearRes){
 				cmd+=" -force=true";
 			}
-			if(ProjectSetting.power2=="true"){
+			if(ProjectSetting.power2=="true"||ProjectSetting.compressTexture=="true"){
 				cmd+=" -powerOfTwo=true";
 			}
 			if(ProjectSetting.trimempty=="true"){
@@ -19872,6 +19872,9 @@ var Laya=window.Laya=(function(window,document){
 			packObj["includeList"]=ExportManager.getNewParamList(whilteList);
 			packObj["excludeList"]=ExportManager.getNewParamList(blackList);
 			packObj["extrudeList"]=ExportManager.getNewParamList(repeatList);
+			if(ProjectSetting.copyRes!="true"){
+				packObj["resDir"]="";
+			};
 			var atlas;
 			atlas={};
 			atlas["width"]=ProjectSetting.textureWidth;
@@ -19899,9 +19902,6 @@ var Laya=window.Laya=(function(window,document){
 			spriteConfig["padding"]=1;
 			spriteConfig["cropAlpha"]=ProjectSetting.trimempty=="true";
 			packObj["sprite"]=spriteConfig;
-
-			console.log("packObj", packObj);
-
 			FileManager.createJSONFile(packFilePath,packObj);
 			var option;
 			option={encoding:"binary",maxBuffer:1024*1024*20};;
@@ -19909,8 +19909,9 @@ var Laya=window.Laya=(function(window,document){
 			newCmd="AtlasGenerator  "+"\""+ExportManager.adptCallPath(packFilePath)+"\"";
 			newCmd="\""+FileManager.adptToCommonUrl(FileManager.getAppPath(newPathPackPath))+"\""+" "+"\""+ExportManager.adptCallPath(packFilePath)+"\"";
 			newCmd="\""+FileManager.adptToCommonUrl(FileManager.getAppPath(newPathPackPath))+"\""+" "+"\""+FileManager.adptToCommonUrl(ExportManager.adptCallPath(packFilePath))+"\"";
+			
 			console.log("newCmd:",newCmd);
-			cmd=newCmd;
+			cmd=newCmd;	
 			console.log("Waiting for pics packing");
 			FileManager.createDirectory(FileManager.getWorkPath(ProjectSetting.resExportPath));
 			CMDShell.execute(cmd,function(err,stdOut,stdErr){
