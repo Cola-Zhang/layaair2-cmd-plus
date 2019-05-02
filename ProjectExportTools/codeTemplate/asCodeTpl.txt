@@ -1,0 +1,12 @@
+/**Created by the LayaAirIDE,do not modify.*/
+package {!pack!} {
+{!imports!}
+	public class {!className!} extends {!classType!} {
+{!vars!}
+		public static var uiView:Object ={!uiObj!};
+		override protected function createChildren():void {
+{!viewClassMap!}			super.createChildren();
+			createView(uiView);
+		}
+	}
+}
