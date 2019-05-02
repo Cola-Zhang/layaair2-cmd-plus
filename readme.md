@@ -16,7 +16,8 @@ layaair2-cmd++/layaair2-cmd compile
 ```
 layaair2-cmd++/layaair2-cmd publish 
 ```
-//测试中 未完成
+测试中 未完成 编译ui
+```
 layaair2-cmd++/layaair2-cmd.js ui -c -a
 
 
