@@ -19837,7 +19837,7 @@ var Laya=window.Laya=(function(window,document){
 			notPackFilePath=FileManager.getWorkPath(ExportManager.adptCallPath(ProjectSetting.asynResExportPath)+"/unpack.json");
 			FileManager.createJSONFile(notPackFilePath,allNotPacks);
 			var oldPathPackPath="libs/TP/TileAtlasPacker";
-			var newPathPackPath="libs/TP/AtlasGenerator";
+			var newPathPackPath="libs/TP/atlas-generator";
 			if (SystemSetting.isCMDVer){
 				oldPathPackPath=oldPathPackPath.replace("libs/","");
 				newPathPackPath=newPathPackPath.replace("libs/","");
@@ -19889,13 +19889,16 @@ var Laya=window.Laya=(function(window,document){
 			FileManager.createJSONFile(packFilePath,packObj);
 			var option;
 			option={encoding:"binary",maxBuffer:1024*1024*20};;
-			option.cwd=FileManager.getAppPath(newPathPackPath).replace("AtlasGenerator","");
 			var newCmd;
-			newCmd="AtlasGenerator --config "+"\""+ExportManager.adptCallPath(packFilePath)+"\"";
+			newCmd="AtlasGenerator  "+"\""+ExportManager.adptCallPath(packFilePath)+"\"";
+			newCmd="\""+FileManager.adptToCommonUrl(FileManager.getAppPath(newPathPackPath))+"\""+" "+"\""+ExportManager.adptCallPath(packFilePath)+"\"";
+			newCmd="\""+FileManager.adptToCommonUrl(FileManager.getAppPath(newPathPackPath))+"\""+" "+"\""+FileManager.adptToCommonUrl(ExportManager.adptCallPath(packFilePath))+"\"";
+			console.log("newCmd:",newCmd);
 			cmd=newCmd;
 			console.log("Waiting for pics packing");
 			FileManager.createDirectory(FileManager.getWorkPath(ProjectSetting.resExportPath));
 			CMDShell.execute(cmd,function(err,stdOut,stdErr){
+				console.log("err",err);
 				ExportManager.packingEndHandler(err,stdOut,stdErr);
 			},option);
 		}
