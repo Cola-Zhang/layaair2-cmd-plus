@@ -422,8 +422,9 @@ var Laya=window.Laya=(function(window,document){
 			this.appPath=this.getAbsPath("./");
 			OSInfo.init();
 			Browser.userAgent=OSInfo.type;
-			FileTools.tempApp=FileManager.getPath(OSInfo.env["APPDATA"],"LayaAirIDE");
-			Device.dataPath=FileManager.getPath(OSInfo.env["APPDATA"],"LayaAirIDE");
+
+			FileTools.tempApp=FileManager.getPath(OSInfo.env["APPDATA"]||OSInfo.env["HOME"],"LayaAirIDE");
+			Device.dataPath=FileTools.tempApp;
 			SystemSetting.appPath=this.appPath;
 			SystemSetting.tempPath=FileManager.getAppPath("data");
 			console.log("appPath:",this.appPath);
