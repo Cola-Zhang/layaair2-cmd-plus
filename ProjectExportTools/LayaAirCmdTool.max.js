@@ -62607,6 +62607,9 @@ var Laya=window.Laya=(function(window,document){
 					CodeManager.tTableTpl=CodeTplManager.tableCodeDic["js"];
 					CodeManager.allInOnePre=CodeTplManager.jsCodePre;
 					allInOneFile=CodeManager.allInOnePre+"\n"+ProjectSetting.codeImportsJS;
+					if (IDEVars.isVersion2){
+						allInOneFile+="\n"+"if(!window.ui) window.ui={};";
+					}
 					break ;
 				case 1:
 					CodeManager.tTableTpl=CodeTplManager.tableCodeDic["ts"];
@@ -62614,6 +62617,7 @@ var Laya=window.Laya=(function(window,document){
 					allInOneFile=CodeManager.allInOnePre+"\n"+ProjectSetting.codeImportsTS;
 					if(IDEVars.isVersion2){
 						tsSamePackage=true;
+						allInOneFile+="\n"+"var REG: Function = Laya.ClassUtils.regClass;\n";
 					}
 					break ;
 				};
