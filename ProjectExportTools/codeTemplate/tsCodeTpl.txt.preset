@@ -6,6 +6,8 @@ module {!pack!} {
         createUI(uiData:any):void {
         {!viewClassMap!}
             laya.utils.ClassUtils.createByJson(uiData, this, this);
+{!dataBinds!}
         }
+{!addCodes!}
     }
 }

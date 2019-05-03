@@ -4,7 +4,7 @@ package {!pack!} {
     import laya.utils.ClassUtils;
 	public class {!className!} extends {!classType!} {
 {!vars!}
-		public static var uiView:Object ={!uiObj!};
+		public static var uiView:Object =/*[STATIC SAFE]*/{!uiObj!};
 		public function {!className!}(){
 		createUI(uiView);
 		}
@@ -12,6 +12,8 @@ package {!pack!} {
 		{
 {!viewClassMap!}
 			ClassUtils.createByJson(uiData, this, this);
+{!dataBinds!}
 		}
+{!addCodes!}
 	}
 }

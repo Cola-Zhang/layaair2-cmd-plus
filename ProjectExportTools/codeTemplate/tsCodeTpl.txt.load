@@ -5,7 +5,9 @@ module {!pack!} {
         createChildren():void {
         {!viewClassMap!}
             super.createChildren();
-            loadUI("{!uiPath!}");
+            this.loadScene("{!uiPath!}");
+{!dataBinds!}
         }
+{!addCodes!}
     }
 }

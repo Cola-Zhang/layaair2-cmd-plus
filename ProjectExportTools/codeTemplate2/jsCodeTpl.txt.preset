@@ -1,0 +1,18 @@
+var {!className!}=(function(_super){
+		function {!className!}(){
+			
+{!vars!}
+			{!className!}.__super.call(this);
+			this.createUI({!className!}.uiView);
+		}
+
+		CLASS$({!className!},'{!pack!}.{!className!}',_super);
+		var __proto__={!className!}.prototype;
+		__proto__.createUI=function(uiData){
+			laya.utils.ClassUtils.createByJson(uiData, this, this);
+{!dataBinds!}
+		}
+{!addCodes!}
+		{!className!}.uiView={!uiObj!};
+		return {!className!};
+	})({!classType!});

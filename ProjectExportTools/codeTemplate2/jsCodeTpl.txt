@@ -1,0 +1,18 @@
+var {!className!}=(function(_super){
+		function {!className!}(){
+			
+{!vars!}
+			{!className!}.__super.call(this);
+		}
+
+		CLASS$({!className!},'{!pack!}.{!className!}',_super);
+		var __proto__={!className!}.prototype;
+		__proto__.createChildren=function(){
+			_super.prototype.createChildren.call(this);
+			this.createView({!className!}.uiView);
+{!dataBinds!}
+		}
+{!addCodes!}
+		{!className!}.uiView={!uiObj!};
+		return {!className!};
+	})({!classType!});

@@ -5,7 +5,9 @@ package {!pack!} {
 {!vars!}
 		override protected function createChildren():void {
 {!viewClassMap!}			super.createChildren();
-			loadUI("{!uiPath!}");
+			loadScene("{!uiPath!}");
+{!dataBinds!}
 		}
+{!addCodes!}
 	}
 }

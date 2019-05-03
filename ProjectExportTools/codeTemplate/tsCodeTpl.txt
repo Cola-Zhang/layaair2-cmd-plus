@@ -7,6 +7,8 @@ module {!pack!} {
         {!viewClassMap!}
             super.createChildren();
             this.createView({!pack!}.{!className!}.uiView);
+{!dataBinds!}
         }
+{!addCodes!}
     }
 }

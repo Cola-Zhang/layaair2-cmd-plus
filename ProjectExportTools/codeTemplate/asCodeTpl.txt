@@ -3,10 +3,12 @@ package {!pack!} {
 {!imports!}
 	public class {!className!} extends {!classType!} {
 {!vars!}
-		public static var uiView:Object ={!uiObj!};
+		public static var uiView:Object =/*[STATIC SAFE]*/{!uiObj!};
 		override protected function createChildren():void {
 {!viewClassMap!}			super.createChildren();
 			createView(uiView);
+{!dataBinds!}
 		}
+{!addCodes!}
 	}
 }

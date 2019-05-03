@@ -64332,6 +64332,7 @@ var Laya=window.Laya=(function(window,document){
 			TimeTraceTool.traceMsg("ExportCodeStart");
 			CodeManager.exportCode();
 			TimeTraceTool.traceMsg("ExportCodeEnd");
+			CodeManager.changeToJsonFiles();
 		}
 
 		ExportManager.exportResWork=function(release){
@@ -66004,10 +66005,7 @@ var Laya=window.Laya=(function(window,document){
 		function ProjectManager(){};
 		__class(ProjectManager,'laya.editor.manager.ProjectManager');
 		__getset(1,ProjectManager,'ProjectVersion',function(){
-			if(ProjectManager.xml&&ProjectManager.xml.getAttribute("version")){
-				return ProjectManager.xml.getAttribute("version");
-			}
-			return "0.9.9 beta";
+			return "2.0.2";
 		});
 
 		__getset(1,ProjectManager,'ProjectMainVersion',function(){

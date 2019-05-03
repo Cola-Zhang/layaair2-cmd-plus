@@ -11,10 +11,9 @@ var {!className!}=(function(_super){
 		__proto__.createUI=function(uiData){
 		    {!viewClassMap!}
 			laya.utils.ClassUtils.createByJson(uiData, this, this);
+{!dataBinds!}
 		}
-
-		STATICATTR$({!className!},
-		['uiView',function(){return this.uiView={!uiObj!};}
-		]);
+{!addCodes!}
+		{!className!}.uiView={!uiObj!};
 		return {!className!};
 	})({!classType!});

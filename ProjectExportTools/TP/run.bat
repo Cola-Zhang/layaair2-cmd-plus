@@ -1,2 +1,0 @@
-"E:\wangwei\codes\layanew\libs\LayaAir\publish\LayaAirPublish\ide\resources\app\out\vs\layaEditor\libs\TP\TileAtlasPacker" -maxAltasWidth=2048 -maxAltasHeight=2048 -tileWidthLimit=512 -tileHeightLimit=512 "E:\wangwei\codes\LayaAir\trank\Editor\LayaAirEditor\laya\assets" -outputDir="E:\wangwei\temp\testpack\" -force=true -powerOfTwo=true -trim=false -htmlDir="E:\wangwei\codes\LayaAir\trank\Editor\LayaAirEditor\bin" -blackList=""
-pause

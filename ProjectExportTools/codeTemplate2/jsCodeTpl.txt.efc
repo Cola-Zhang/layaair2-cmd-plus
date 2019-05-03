@@ -1,0 +1,13 @@
+var {!className!}=(function(_super){
+		function {!className!}(){
+			
+{!vars!}
+			{!className!}.__super.call(this);
+			this.effectData ={!fullClassname!}.uiView;;
+		}
+
+		CLASS$({!className!},'{!pack!}.{!className!}',_super);
+		var __proto__={!className!}.prototype;
+		{!className!}.uiView={!uiObj!};
+		return {!className!};
+	})({!classType!});
