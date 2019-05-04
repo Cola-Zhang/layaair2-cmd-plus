@@ -15,7 +15,7 @@ cd layaair2-plus-cmd/
 #### 使用
 ```
 cd 游戏项目根目录
-导出json atals 散图 gameconfig layamaxui
+导出json atals 散图 gameconfig layamaxui runtime
 layaair2-plus-cmd ui -c -a -d
 编译项目
 layaair2-plus-cmd compile
