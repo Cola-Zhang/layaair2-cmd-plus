@@ -64337,6 +64337,7 @@ var Laya=window.Laya=(function(window,document){
 			CodeManager.exportCode();
 			TimeTraceTool.traceMsg("ExportCodeEnd");
 			CodeManager.changeToJsonFiles();
+			CodeManager.exportPrefabDatas();
 		}
 
 		ExportManager.exportResWork=function(release){
@@ -64459,6 +64460,9 @@ var Laya=window.Laya=(function(window,document){
 				}
 				if(!ExportManager.exportExcels(ExportManager.packingEndHandler,ExportManager.clearRes))
 					ExportManager.packingEndHandler(err,stdOut,stdErr);
+				
+				ExportManager.exportFileConfig();
+				
 			},option);
 			return true;
 		}

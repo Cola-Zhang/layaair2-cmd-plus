@@ -1,34 +1,4 @@
 {
-  "_from": "layaair2-cmd",
-  "_id": "layaair2-cmd@1.3.0",
-  "_inBundle": false,
-  "_integrity": "sha512-4OkWBpMZZ8by2Vawxjg6ExfNx1ntf2iN2qwTbjCdOvBoSpWnJFm4TcRVDd+rwd4XX4lkh6u9aCVx9SOJ33Zc+g==",
-  "_location": "/layaair2-cmd",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "layaair2-cmd",
-    "name": "layaair2-cmd",
-    "escapedName": "layaair2-cmd",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/layaair2-cmd/-/layaair2-cmd-1.3.0.tgz",
-  "_shasum": "4847a8fa0559f82543557501e7bfa6e60211e84f",
-  "_spec": "layaair2-cmd",
-  "_where": "/Users/zhangbaokun/Documents/tree_laya",
-  "author": {
-    "name": "kylin"
-  },
-  "bin": {
-    "layaair2-cmd": "./layaair2-cmd.js"
-  },
   "bundleDependencies": [
     "browserify",
     "gulp-jsonminify",
@@ -66,11 +36,12 @@
     "layaair",
     "layacmd",
     "layaair-cmd",
-    "layaair2-cmd"
+    "layaair2-cmd",
+    "layaair2-plus-cmd"
   ],
   "license": "ISC",
-  "main": "layaair2-cmd.js",
-  "name": "layaair2-cmd",
+  "main": "layaair2-plus-cmd.js",
+  "name": "layaair2-plus-cmd",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

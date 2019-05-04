@@ -1,0 +1,17 @@
+/**Created by the LayaAirIDE,do not modify.*/
+package {!pack!} {
+{!imports!}
+    import laya.utils.ClassUtils;
+	public class {!className!} extends {!classType!} {
+{!vars!}
+		public static var uiView:Object ={!uiObj!};
+		public function {!className!}(){
+		createUI(uiView);
+		}
+		private function createUI(uiData:Object):void
+		{
+{!viewClassMap!}
+			ClassUtils.createByJson(uiData, this, this);
+		}
+	}
+}

@@ -1,0 +1,1 @@
+  {#@PBType#} {#@name#} = {#@varIndex#};

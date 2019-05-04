@@ -1,0 +1,3 @@
+message {#@className#}Data {
+{#@vars#}
+}

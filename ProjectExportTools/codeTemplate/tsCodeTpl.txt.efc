@@ -1,7 +1,0 @@
-module {!pack!} {
-    export class {!className!} extends {!classType!} {
-{!vars!}
-        public static  uiView:any ={!uiObj!};
-        constructor(){ super();this.effectData ={!fullClassname!}.uiView;}
-    }
-}

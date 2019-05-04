@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<!--
+
+	ADOBE SYSTEMS INCORPORATED
+	Copyright 2005-2007 Adobe Systems Incorporated
+	All Rights Reserved.
+
+	NOTICE: Adobe permits you to use, modify, and distribute this file
+	in accordance with the terms of the license agreement accompanying it.
+
+-->
+
+<flex-config>
+    <!-- Specifies the minimum player version that will run the compiled SWF. -->
+   <target-player>11.1</target-player>
+
+    <!-- Specifies the version of the compiled SWF -->
+    <swf-version>22</swf-version>
+
+   <compiler>
+
+      <!-- Turn on generation of accessible SWFs. -->
+      <accessible>true</accessible>
+
+      <!-- Specifies the locales for internationalization. -->
+      <locale>
+          <locale-element>en_US</locale-element>
+      </locale>
+
+      <!-- List of path elements that form the roots of ActionScript class hierarchies. -->
+      <!-- not set -->
+
+      <source-path>
+         <path-element>LayaAirFlash/Flash/src</path-element>
+		 <path-element>libs/src</path-element>
+      </source-path>
+
+     <!-- Allow the source-path to have path-elements which contain other path-elements -->
+     <allow-source-path-overlap>true</allow-source-path-overlap>
+
+      <!-- Run the AS3 compiler in a mode that detects legal but potentially incorrect -->
+      <!-- code.                                                                       -->
+      <show-actionscript-warnings>true</show-actionscript-warnings>
+
+   </compiler>
+
+
+</flex-config>

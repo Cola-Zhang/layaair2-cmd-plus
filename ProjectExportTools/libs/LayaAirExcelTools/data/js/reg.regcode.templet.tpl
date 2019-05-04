@@ -1,0 +1,1 @@
+		ClassUtils.regClass("{#@nameStr#}", {#@classNameFull#});
