@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<uiComp>
+	<ColorFilterSetter className="laya.editorUI.filters.ColorFilterSetter"  noticeChange="true" isScript="true" renderType="none" runClass="laya.effect.ColorFilterSetter" defaultValue="color=#000000 alpha=0 brightness=0 contrast=0 saturation=0 hue=0"  icon="Animation"  groups="公用,常用" drag="99">
+<!--		<prop name="red" nickname="Red增量" tips="Red增量" type="sNumber" min="0" max="255" tick="1" default="0" group="公用" />
+		<prop name="green" nickname="Green增量" tips="Green增量" type="sNumber" min="0" max="255" tick="1" default="0" group="公用" />
+		<prop name="blue" nickname="Blue增量" tips="Blue增量" type="sNumber" min="0" max="255" tick="1" default="0" group="公用" /> -->
+		<prop name="color" nickname="颜色" tips="颜色" type="color" min="0" max="255" default="#000000" group="公用" />
+		<prop name="alpha" nickname="Alpha增量" tips="Alpha增量" type="sliderinput" min="0" max="255" tick="1" default="0" group="公用" />
+		<prop name="brightness" nickname="亮度" tips="亮度" type="sliderinput" min="-100" max="100" tick="1" default="0" group="公用" />
+		<prop name="contrast" nickname="对比度" tips="对比度" type="sliderinput" min="-100" max="100" tick="1" default="0" group="公用" />
+		<prop name="saturation" nickname="饱和度" tips="饱和度" type="sliderinput" min="-100" max="100" tick="1" default="0" group="公用" />
+		<prop name="hue" nickname="色调" tips="色调" type="sliderinput" min="-180" max="180" default="0" tick="1" group="公用" />
+	</ColorFilterSetter>
+	<GlowFilterSetter className="laya.editorUI.filters.GlowFilterSetter"  noticeChange="true" isScript="true" renderType="none" runClass="laya.effect.GlowFilterSetter" defaultValue="blur=4 offX=6 offY=6"  icon="Animation"  groups="公用,常用" drag="99">
+		<prop name="color" nickname="颜色" tips="颜色" type="color" min="0" max="255" default="#ff0000" group="公用" />
+		<prop name="blur" nickname="blur" tips="边缘模糊的大小" type="sliderinput" min="0" max="20" tick="1" default="0" group="公用" />
+		<prop name="offX" nickname="offX" tips="X轴方向的偏移" type="number"  default="0" group="公用" />
+		<prop name="offY" nickname="offY" tips="Y轴方向的偏移" type="number"  default="0" group="公用" />
+	</GlowFilterSetter>
+	<BlurFilterSetter className="laya.editorUI.filters.BlurFilterSetter"  noticeChange="true" isScript="true" renderType="none" runClass="laya.effect.BlurFilterSetter" defaultValue="strength=4"  icon="Animation"  groups="公用,常用" drag="99">
+		<prop name="strength" nickname="strength" tips="强度" type="number" min="0" max="255"  tick="1" default="4" group="公用" />
+	</BlurFilterSetter>
+</uiComp>

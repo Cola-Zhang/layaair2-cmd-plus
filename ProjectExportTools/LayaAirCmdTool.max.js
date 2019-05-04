@@ -9700,6 +9700,9 @@ var Laya=window.Laya=(function(window,document){
 		Utils.parseXMLFromString=function(value){
 			var rst;
 			value=value.replace(/>\s+</g,'><');
+			const jsdom = require("jsdom")
+			const { JSDOM } = jsdom
+			var DOMParser = new JSDOM().window.DOMParser
 			rst=(new DOMParser()).parseFromString(value,'text/xml');
 			if (rst.firstChild.textContent.indexOf("This page contains the following errors")>-1){
 				throw new Error(rst.firstChild.firstChild.textContent);
@@ -62823,15 +62826,15 @@ var Laya=window.Laya=(function(window,document){
 			var startSceneFile;
 			startScene=ProjectSetting.startScene;
 			if(!startScene){
-				startScene=IDEAPIS.getCurPagePath();
-				if(startScene&&TypeManager.isSceneFile(startScene)){
-					startScene=FileManager.getPageRelativePath(startScene);
-					startScene=FileManager.adptToCommonUrl(startScene);
-					}else{
-					startScene=ProjectManager.getLastOpenScene();
-					if(!startScene)
-						startScene=TypeManager.getSceneList()[0];
-				}
+				// startScene=IDEAPIS.getCurPagePath();
+				// if(startScene&&TypeManager.isSceneFile(startScene)){
+				// 	startScene=FileManager.getPageRelativePath(startScene);
+				// 	startScene=FileManager.adptToCommonUrl(startScene);
+				// 	}else{
+				// 	startScene=ProjectManager.getLastOpenScene();
+				// 	if(!startScene)
+				// 		startScene=TypeManager.getSceneList()[0];
+				// }
 			}
 			if(startScene){
 				startSceneFile=startScene;
@@ -64336,8 +64339,8 @@ var Laya=window.Laya=(function(window,document){
 			TimeTraceTool.traceMsg("ExportCodeStart");
 			CodeManager.exportCode();
 			TimeTraceTool.traceMsg("ExportCodeEnd");
-			CodeManager.changeToJsonFiles();
 			CodeManager.exportPrefabDatas();
+			CodeManager.changeToJsonFiles();
 		}
 
 		ExportManager.exportResWork=function(release){
@@ -65003,7 +65006,7 @@ var Laya=window.Laya=(function(window,document){
 				}
 			}
 			try {
-				styleXML=new XMLElement(Boolean(txt)? txt :"<?xml version=\"1.0\" encoding=\"UTF-8\"?><page></page>");
+				styleXML=new XMLElement(Boolean(txt)? txt :"<page></page>");
 				}catch (e){
 				Alert.show(Sys.lang("PageStyleManager 读取文件{0}出错",stylePath),Sys.lang("读取文件出错"));
 			}
@@ -65016,7 +65019,7 @@ var Laya=window.Laya=(function(window,document){
 					styleMap[String(item.getAttribute('name'))]=item;
 				}
 				}else{
-				styleXML=new XMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\"?><page></page>");
+				styleXML=new XMLElement("<page></page>");
 			}
 			projectData.pageStyleO.styleMap=styleMap;
 			projectData.pageStyleO.styleXML=styleXML;
@@ -66435,7 +66438,7 @@ var Laya=window.Laya=(function(window,document){
 				}
 			}
 			try {
-				styleXML=new XMLElement(Boolean(txt)?txt:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><res></res>");
+				styleXML=new XMLElement(Boolean(txt)?txt:"<res></res>");
 				}catch (e){
 				Alert.show(Sys.lang("ResStyleManager 读取文件{0}出错",stylePath),Sys.lang("读取文件出错"));
 			}
@@ -66448,7 +66451,7 @@ var Laya=window.Laya=(function(window,document){
 					styleMap[String(item.getAttribute('name'))]=item;
 				}
 				}else{
-				styleXML=new XMLElement("<?xml version=\"1.0\" encoding=\"UTF-8\"?><res></res>");
+				styleXML=new XMLElement("<res></res>");
 			}
 			projectData.resStyleO.styleMap=styleMap;
 			projectData.resStyleO.styleXML=styleXML;
@@ -79360,9 +79363,6 @@ var Laya=window.Laya=(function(window,document){
 			if(!FileTools.exist(jsFile))return;
 			var jsStrs;
 			jsStrs=FileTools.readFile(jsFile);
-			var tempscript=Browser.document.createElement("script");
-			tempscript.innerHTML=jsStrs;
-			Browser.document.body.appendChild(tempscript);
 			var me=this;
 			var initor;
 			initor=laya.ide.Initiator;
@@ -94376,7 +94376,7 @@ var Laya=window.Laya=(function(window,document){
 			var styleXML;
 			var txt=FileManager.readTxtFile(path);
 			try {
-				styleXML=new XMLElement(Boolean(txt)?txt:"<?xml version=\"1.0\" encoding=\"UTF-8\"?><res></res>");
+				styleXML=new XMLElement(Boolean(txt)?txt:"<res></res>");
 				}catch (e){
 				console.log("parseXml fail:",path);
 			}
@@ -124160,6 +124160,7 @@ var Laya=window.Laya=(function(window,document){
 			ExportManager.isCmdVer=true;
 			TemplateManager.init();
 			CodeTplManager.initCodeTpls();
+			RenderManager.I.initRenders();
 			this.openProject(this.tarProject,this.releasemode=="release");
 		}
 

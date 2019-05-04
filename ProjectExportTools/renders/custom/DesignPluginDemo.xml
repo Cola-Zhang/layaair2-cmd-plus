@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<uiComp>
+	<DesignPluginDemo className="laya.ide.designplugin.DesignPluginDemo"  is3DScene="true" runClass="laya.display.Sprite" defaultValue=""  icon="Animation"  groups="公用,常用,宽高及位置,旋转及缩放" drag="5">
+		<prop name="var" tips="声明一个唯一的名称，用来引用当前组件，方便在代码中调用此组件" type="string" default="" group="公用" />
+		<prop name="name" tips="组件名称" type="string" default="" group="公用" />
+		<prop name="pos" tips="分组" type="group" group="宽高及位置">
+			<prop name="width" tips="宽度" type="number" default="" />
+			<prop name="height" tips="高度" type="number" default="" />
+		</prop>	
+	</DesignPluginDemo>
+</uiComp>

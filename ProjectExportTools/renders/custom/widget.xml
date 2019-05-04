@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<uiComp>
+	<Widget className="laya.editorUI.NoIconItem"  noticeChange="true" isScript="true" renderType="none"  defaultValue=""  runClass="laya.ui.Widget" icon="Animation"  groups="宽高及位置" drag="5">
+		<prop name="pos" tips="分组" type="group" group="宽高及位置">
+			<prop name="left" tips="居父容器左边的距离" type="number" default="" />
+			<prop name="right" tips="居父容器右边的距离" type="number" default="" />
+		</prop>
+		<prop name="pos" tips="分组" type="group" group="宽高及位置">
+			<prop name="top" tips="居父容器上边的距离" type="number" default="" />
+			<prop name="bottom" tips="居父容器底边的距离" type="number" default="" />
+		</prop>
+		<prop name="pos" tips="分组" type="group" group="宽高及位置">
+			<prop name="centerX" tips="水平居中偏移位置" type="number" default="" />
+			<prop name="centerY" tips="垂直居中偏移位置" type="number" default="" />
+		</prop>
+	</Widget>
+</uiComp>

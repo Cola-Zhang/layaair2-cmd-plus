@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<uiComp>
+	<Scene3D className="laya.ide.designplugin.EditerScene3DPluginDemo" conflictParent="Scene3D" inherit="Node" icon="View"  is3DScene="true" renderType = "none" runClass="laya.d3.core.scene.Scene3D" groups="Base,Fog" drag="3">
+		<prop name="name" tips="场景名称" type="string" default="" group="Base" />
+		<prop name="ambientColor" title="环境光颜色" tips="环境光颜色" type="colorarray" group="Base" />
+		<prop name="enableFog" title="是否开启" tips="是否开启雾" type="bool" default="true" group="Fog" />
+		<prop name="fogColor" title="雾的颜色" tips="雾的颜色" type="colorarray" group="Fog" />
+		<prop name="fogStart" title="雾的起始位置" tips="雾的起始位置" type="number" default="10" group="Fog"/>
+		<prop name="fogRange" title="雾的范围" tips="雾的范围" type="number" default="30" group="Fog"/>
+	</Scene3D>
+	<Sprite3D className="laya.d3.core.Sprite3D"  is3DNode="true" icon="View" extension="lh" renderType = "none"  skinLabel="url" runClass="laya.d3.core.Sprite3D" groups="Base,Transform" drag="6">
+		<prop name="name" tips="网格精灵" type="string" default="" group="Base" />
+		<prop name="active" tips="是否激活" type="bool" default="false" group="Base" />
+		<prop name="isStatic" tips="静态" type="bool" default="false" group="Base" />
+		<prop name="layer" tips="层" type="int" default="0" group="Base" />
+		<prop name="position" tips="位置" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Transform" />
+		<prop name="rotationEuler" tips="旋转" type="vector" default="" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="scale" tips="缩放" type="vector" default="" labels="x,y,z" minChange = "0.01"  group="Transform" />
+	</Sprite3D >
+	<Camera className="laya.d3Editor.core.EditorCamera" inherit="BaseCamera"  is3DNode="true" icon="View" renderType = "none" runClass="laya.d3.core.Camera" groups="Base,Transform,Camera" drag="6">
+		<prop name="name" tips="摄像机名称" type="string" default="" group="Base" />
+		<prop name="active" tips="是否激活" type="bool" default="false" group="Base" />
+		<prop name="isStatic" tips="静态" type="bool" default="false" group="Base" />
+		<prop name="activeValue" tips="是否启用" type="bool" default="true" group="Base" />
+		<prop name="layer" tips="层" type="int" default="0" group="Base" />
+		<prop name="position" title="位置" tips="位置" type="vector" freshTarget="true" default="" labels="x,y,z" minChange = "0.01" group="Transform" />
+		<prop name="rotationEuler" tips="旋转" type="vector" freshTarget="true" default="" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="scale" tips="缩放" type="vector" default="" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="clearFlag" tips="清除标记" type="option" option="SOLIDCOLOR,SKY,DEPTHONLY,NONE" useID = "true" group="Camera" />
+		<prop name="skyboxMaterial" tips="天空盒" accept="res" acceptTypes="lmat" type="string" default="" group="Camera" />
+		<prop name="clearColor" title="clearColor" tips="相机清除颜色" type="colorarray" group="Camera" />
+		<prop name="fieldOfView" tips="视野" type="Number" min="0"  minChange = "0.01"  group="Camera" />
+		<prop name="nearPlane" tips="近裁面" type="Number" min="0"  minChange = "0.01"  group="Camera" />
+		<prop name="farPlane" tips="远裁面" type="Number" min="0"  minChange = "0.01" group="Camera" />
+		<prop name="viewport" tips="视口" type="vector" default="" labels="x,y,w,h"  minChange = "0.01"  min="0" xCount="2" group="Camera" />
+		<prop name="orthographic" tips="是否正交" type="bool" default="false" group="Camera" />		
+	</Camera>
+
+	<MeshSprite3D className="laya.d3.core.MeshSprite3D"  is3DNode="true" inherit="RenderableSprite3D" renderType = "none" icon="View"  runClass="laya.d3.core.MeshSprite3D" groups="Base,Transform,MeshFilter,MeshRender,Material" drag="3">
+		<prop name="name" tips="网格精灵" type="string" default="" group="Base" />
+		<prop name="active" tips="是否激活" type="bool" default="false" group="Base" />
+		<prop name="isStatic" tips="静态" type="bool" default="false" group="Base" />
+		<prop name="layer" tips="层" type="int" default="0" group="Base" />
+		<prop name="position" tips="位置" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Transform" />
+		<prop name="rotationEuler" tips="旋转" type="vector" default="" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="scale" tips="缩放" type="vector" default="" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="LayaMaterialUI" tips="" type="LayaMaterialUI" group="Material" />
+	</MeshSprite3D>
+
+	<SkinnedMeshSprite3D className="laya.d3.core.SkinnedMeshSprite3D"  is3DNode="true" inherit="RenderableSprite3D" renderType = "none" icon="View"  runClass="laya.d3.core.SkinnedMeshSprite3D" groups="Base,Transform,MeshFilter,MeshRender,Material" drag="3">
+		<prop name="name" tips="网格精灵" type="string" default="" group="Base" />
+		<prop name="active" tips="是否激活" type="bool" default="false" group="Base" />
+		<prop name="isStatic" tips="静态" type="bool" default="false" group="Base" />
+		<prop name="layer" tips="层" type="int" default="0" group="Base" />
+		<prop name="position" tips="位置" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Transform" />
+		<prop name="rotationEuler" tips="旋转" type="vector" default="" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="scale" tips="缩放" type="vector" default="" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="LayaMaterialUI" tips="" type="LayaMaterialUI" group="Material" />
+	</SkinnedMeshSprite3D>
+
+	<DirectionLight className="laya.d3.core.light.DirectionLight" inherit="LightSprite" is3DNode="true" renderType = "none" icon="View"  runClass="laya.d3.core.light.DirectionLight" groups="Base,Transform,DirectionLight" drag="6">
+		<prop name="name" tips="方向光" type="string" default="" group="Base" />
+		<prop name="active" tips="是否激活" type="bool" default="false" group="Base" />
+		<prop name="isStatic" tips="静态" type="bool" default="false" group="Base" />
+		<prop name="layer" tips="层" type="int" default="0" group="Base" />
+		<prop name="position" tips="位置" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Transform" />
+		<prop name="rotationEuler" tips="旋转" type="vector" default="" labels="x,y,z" freshTarget="true" minChange = "0.01"  group="Transform" />
+		<prop name="scale" tips="缩放" type="vector" default="0.01" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="intensity" tips="强度" type="Number" default="0" min="0"  minChange = "0.01" group="DirectionLight" />
+		<prop name="color" title="color" tips="颜色" type="colorarray" group="DirectionLight" />
+	</DirectionLight>
+
+	<PointLight className="laya.d3.core.light.PointLight" inherit="LightSprite" is3DNode="true" renderType = "none" icon="View"  runClass="laya.d3.core.light.PointLight" groups="Base,Transform,PointLight" drag="6">
+		<prop name="name" tips="点光" type="string" default="" group="Base" />
+		<prop name="active" tips="是否激活" type="bool" default="false" group="Base" />
+		<prop name="isStatic" tips="静态" type="bool" default="false" group="Base" />
+		<prop name="layer" tips="层" type="int" default="0" group="Base" />
+		<prop name="position" tips="位置" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Transform" />
+		<prop name="rotationEuler" tips="旋转" type="vector" default="" labels="x,y,z" freshTarget="true" minChange = "0.01"  group="Transform" />
+		<prop name="scale" tips="缩放" type="vector" default="0.01" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="intensity" tips="强度" type="Number" default="0" min="0"  minChange = "0.01" group="PointLight" />
+		<prop name="range" tips="范围" type="Number" default="0" min="0"  minChange = "0.01" group="PointLight" />
+		<prop name="color" title="color" tips="颜色" type="colorarray" group="PointLight" />
+	</PointLight>
+
+	<SpotLight className="laya.d3.core.light.SpotLight" inherit="LightSprite" is3DNode="true" renderType = "none" icon="View"  runClass="laya.d3.core.light.SpotLight" groups="Base,Transform,SpotLight" drag="6">
+		<prop name="name" tips="点光" type="string" default="" group="Base" />
+		<prop name="active" tips="是否激活" type="bool" default="false" group="Base" />
+		<prop name="isStatic" tips="静态" type="bool" default="false" group="Base" />
+		<prop name="layer" tips="层" type="int" default="0" group="Base" />
+		<prop name="position" tips="位置" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Transform" />
+		<prop name="rotationEuler" tips="旋转" type="vector" default="" labels="x,y,z" freshTarget="true" minChange = "0.01"  group="Transform" />
+		<prop name="scale" tips="缩放" type="vector" default="0.01" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="intensity" tips="强度" type="Number" default="0" min="0"  minChange = "0.01" group="SpotLight" />
+		<prop name="spotAngle" tips="角度" type="Number" default="0" min="0"  minChange = "0.01" group="SpotLight" />
+		<prop name="range" tips="范围" type="Number" default="0" min="0"  minChange = "0.01" group="SpotLight" />
+		<prop name="color" title="color" tips="颜色" type="colorarray" group="SpotLight" />
+	</SpotLight>
+
+	<Rigidbody3D className="laya.d3Editor.component.physics.EditerRigidbody3D"  targetType="3d" conflict="Rigidbody3D,PhysicsCollider" is3DNode="true" isScript="true" runClass="laya.d3.physics.Rigidbody3D" icon="Physics" groups="Base,Transform" drag="3">
+		<prop name="isTrigger" tips="是否为触发器" type="bool" group="Base" />
+		<prop name="mass" tips="质量" type="number" default="0" group="Base" />
+		<prop name="collisionGroup" tips="所属碰撞组，使用2的幂次方值指定" type="int" default="1" group="Base" />
+		<prop name="canCollideWith" tips="可碰撞组，使用2的幂次方值指定" type="int" default="-1" group="Base" />
+		<prop name="isKinematic" tips="isKinematic" type="bool" default="false" group="Base" />
+		<prop name="restitution" tips="弹力" type="number" default="0.5" min="0.01" group="Base" />
+		<prop name="friction" tips="摩擦力" type="number" default="0.5" min="0.01" group="Base" />
+		<prop name="rollingFriction" tips="滚动摩擦力" type="number" default="0" group="Base" />
+		<prop name="linearDamping" tips="线性阻尼" type="number" default="0" group="Base" />
+		<prop name="angularDamping" tips="角度阻尼" type="number" default="0" group="Base" />
+		<prop name="overrideGravity" tips="重置重力" type="bool" default="false" group="Base" />
+		<prop name="gravity" tips="重力" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Base" />
+		<prop name="ccdMotionThreshold" tips="连续碰撞检测(CCD)的速度阈值" type="number" default="0" group="Base" />
+		<prop name="ccdSweptSphereRadius" tips="连续碰撞检测(CCD)范围的球半径" type="number" default="0" group="Base" />
+	</Rigidbody3D>
+	
+	<PhysicsCollider className="laya.d3.physics.PhysicsCollider" targetType="3d" isScript="true" conflict="PhysicsCollider,Rigidbody3D" is3DNode="true" runClass="laya.d3.physics.PhysicsCollider" icon="Physics" groups="Base,Transform" drag="3">
+		<prop name="isTrigger" tips="是否为触发器" type="bool" group="Base" />
+		<prop name="restitution" tips="弹力" type="number" default="0.5" min="0.01" group="Base" />
+		<prop name="friction" tips="摩擦力" type="number" default="0.5" min="0.01" group="Base" />
+		<prop name="rollingFriction" tips="滚动摩擦力" type="number" default="0" group="Base" />
+		<prop name="collisionGroup" tips="所属碰撞组，使用2的幂次方值指定" type="int" default="1" group="Base" />
+		<prop name="canCollideWith" tips="可碰撞组，使用2的幂次方值指定" type="int" default="-1" group="Base" />
+		<prop name="ccdMotionThreshold" tips="连续碰撞检测(CCD)的速度阈值" type="number" default="0" group="Base" />
+		<prop name="ccdSweptSphereRadius" tips="连续碰撞检测(CCD)范围的球半径" type="number" default="0" group="Base" />
+	</PhysicsCollider>
+
+	<BoxColliderShape className="laya.d3Editor.component.physics.EditerColliderShape.EditerBoxColliderShape" targetType="3d" rely="PhysicsCollider,Rigidbody3D" is3DNode="true" noticeChange="true" isScript="true" isShape="true" runClass="laya.d3.physics.shape.BoxColliderShape" icon="Physics" groups="Base,Transform">
+		<prop name="center" tips="center" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Base" />
+		<prop name="size" tips="size" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Base" />
+	</BoxColliderShape>
+	
+	<MeshColliderShape className="laya.d3Editor.component.physics.EditerColliderShape.EditerMeshColliderShape" targetType="3d" rely="PhysicsCollider,Rigidbody3D" is3DNode="true" noticeChange="true" isScript="true" isShape="true" runClass="laya.d3.physics.shape.MeshColliderShape" icon="Physics" groups="Base,Transform">
+		<prop name="center" tips="center" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Base" />
+		<prop name="mesh" tips="mesh" type="string" accept="res" acceptTypes="lm" default="" group="Base" />
+	</MeshColliderShape>	
+	<SphereColliderShape className="laya.d3Editor.component.physics.EditerColliderShape.EditerSphereColliderShape" targetType="3d" rely="PhysicsCollider,Rigidbody3D" is3DNode="true" noticeChange="true" isScript="true" isShape="true" runClass="laya.d3.physics.shape.SphereColliderShape" icon="Physics" groups="Base,Transform">
+		<prop name="center" tips="center" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Base" />
+		<prop name="radius" tips="radius" type="number" default="0.5" min="0.01" group="Base" />
+	</SphereColliderShape>
+
+	<CapsuleColliderShape className="laya.d3Editor.component.physics.EditerColliderShape.EditerCapsuleColliderShape" targetType="3d" rely="PhysicsCollider,Rigidbody3D" is3DNode="true" noticeChange="true" isScript="true" isShape="true" runClass="laya.d3.physics.shape.CapsuleColliderShape" icon="Physics" groups="Base,Transform">
+		<prop name="center" tips="center" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Base" />
+		<prop name="radius" tips="radius" type="number" default="0.5" min="0.01" group="Base" />
+		<prop name="height" tips="height" type="number" default="2" min="0.01" group="Base" />
+	</CapsuleColliderShape>
+	
+	<CylinderColliderShape className="laya.d3Editor.component.physics.EditerColliderShape.EditerCylinderColliderShape" targetType="3d" rely="PhysicsCollider,Rigidbody3D" is3DNode="true" noticeChange="true" isScript="true" isShape="true" runClass="laya.d3.physics.shape.CylinderColliderShape" icon="Physics" groups="Base,Transform">
+		<prop name="center" tips="center" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Base" />
+		<prop name="radius" tips="radius" type="number" default="0.5" min="0.01" group="Base" />
+		<prop name="height" tips="height" type="number" default="1" min="0.01" group="Base" />
+	</CylinderColliderShape>
+	
+	<ConeColliderShape className="laya.d3Editor.component.physics.EditerColliderShape.EditerConeColliderShape" targetType="3d" rely="PhysicsCollider,Rigidbody3D" noticeChange="true" is3DNode="true" isScript="true" isShape="true" runClass="laya.d3.physics.shape.ConeColliderShape" icon="Physics" groups="Base,Transform">
+		<prop name="center" tips="center" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Base" />
+		<prop name="radius" tips="radius" type="number" default="0.5" min="0.01" group="Base" />
+		<prop name="height" tips="height" type="number" default="1" min="0.01" group="Base" />
+	</ConeColliderShape>
+	<Cube icon="Button"></Cube>
+	<Sphere icon="3DSphere"></Sphere>
+	<Capsule icon="3DCapsule"></Capsule>
+	<Cylinder icon="3DCylinder"></Cylinder>
+	<Plane icon="3DPlane"></Plane>
+    <SimpleShape className="laya.ide.designplugin.SimpleShape" runClass="laya.d3.physics.shape.ConeColliderShape" icon="3DPlane" is3DNode="true" inherit="Sprite3D" groups="Base,Transform">
+        <prop name="crossSection" title="横截面" tips="横截面矢量绘制" type="poly" group="Base" />
+        <prop name="crossSectionInterpNum" title="平滑次数" tips="横截面平滑次数" type="number" default="0" min="0" max="10" group="Base"/>
+        <prop name="profileLine" title="侧面" tips="侧面提供高度和缩放" type="lines" group="Base" />
+        <prop name="profileLineInterpNum" title="平滑次数" tips="侧面平滑次数" type="number" default="0" min="0" max="10" group="Base"/>
+        <prop name="polygonStyle" title="多边形风格" tips="多边形风格" type="bool" default="true" group="Base" />
+        <prop name="color" title="颜色" tips="颜色" type="colorarray"  group="Base" />
+		<prop name="position" tips="位置" type="vector" default="" labels="x,y,z" minChange = "0.01" group="Transform" />
+		<prop name="rotationEuler" tips="旋转" type="vector" default="" labels="x,y,z" minChange = "0.01"  group="Transform" />
+		<prop name="scale" tips="缩放" type="vector" default="" labels="x,y,z" minChange = "0.01"  group="Transform" />
+        <prop name="" title="" tips="颜色" type="MyCustomUI"  group="Base" />        
+    </SimpleShape>
+
+	<Material icon="3DSphere"></Material>
+</uiComp>
